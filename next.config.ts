@@ -5,7 +5,6 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // 静态导出配置
   distDir: 'out'
 }
 
