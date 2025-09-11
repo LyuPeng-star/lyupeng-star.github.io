@@ -33,8 +33,8 @@ jobs:
       - name: Build with Next.js
         run: npm run build
 
-      - name: Create CNAME file
-        run: echo "lyupaif.com" > ./out/CNAME
+      # - name: Create CNAME file
+      # run: echo "lyupaif.com" > ./out/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
