@@ -1,0 +1,55 @@
+---
+title: "Publications"
+subtitle: "Selected publications and research contributions"
+publications:
+  - title: "Application of Machine Learning Algorithms for On-Farm Monitoring and Prediction of Broilers' Live Weight: A Quantitative Study Based on Body Weight Data"
+    authors: "Peng Lyu, Jeongik Min, Juwhan Song"
+    venue: "Agriculture"
+    year: "2023"
+    status: "Published"
+    description: "A comprehensive study developing non-invasive automatic broiler weight estimation and prediction methods using machine learning algorithms. The research addresses high labour costs and stress responses in large-scale broiler production through innovative clustering and anomaly detection techniques."
+    link: "https://doi.org/10.3390/agriculture13122193"
+    pdf: "/papers/lyu2023agriculture.pdf"
+    doi: "10.3390/agriculture13122193"
+    citations: 0
+    impact_factor: 3.6
+    
+  - title: "Efficient Dehazing with Recursive Gated Convolution in U-Net: A Novel Approach for Image Dehazing"
+    authors: "Zhibo Wang, Ju Jia, Peng Lyu, Jeongik Min"
+    venue: "Journal of Imaging"
+    year: "2023"
+    status: "Published"
+    description: "A novel image dehazing method leveraging recursive gated convolution mechanisms within U-Net architecture. The approach demonstrates superior performance in removing atmospheric haze whilst maintaining image quality and detail preservation."
+    link: "https://doi.org/10.3390/jimaging9090183"
+    pdf: "/papers/wang2023dehazing.pdf"
+    doi: "10.3390/jimaging9090183"
+    citations: 0
+    impact_factor: 3.2
+    
+  - title: "Enhancing Broiler Weight Estimation through Gaussian Kernel Density Estimation Modeling"
+    authors: "Peng Lyu, Research Collaborators"
+    venue: "In Preparation"
+    year: "2023"
+    status: "In Preparation"
+    description: "Advanced methodological improvements to broiler weight estimation using Gaussian kernel density estimation techniques. This work extends the machine learning framework for agricultural monitoring applications."
+    
+  - title: "AI-Driven Structural Health Monitoring System for Bridge Infrastructure"
+    authors: "Peng Lyu, SHM Research Team"
+    venue: "Engineering Applications of Artificial Intelligence"
+    year: "2024"
+    status: "Under Review"
+    description: "Development of intelligent structural health monitoring systems using neural networks for stress-strain relationship prediction. The research focuses on automated analysis tools for infrastructure safety management."
+  - title: "Digital Transformation in Industrial Processes: AI Applications and Maturity Assessment"
+    authors: "Peng Lyu, Industrial Research Group"
+    venue: "Korea Institute of Enterprise Architecture Conference"
+    year: "2022"
+    status: "Published"
+    description: "Investigation of digital twin technologies and AI applications in industrial digitalization processes. The work explores digital maturity frameworks and emerging technologies for industrial transformation."
+    presentation: "Oral Presentation"
+  - title: "Explainable AI Systems for Agricultural Intelligence: Transparency in Livestock Monitoring"
+    authors: "Peng Lyu, XAI Research Team"
+    venue: "Computers and Electronics in Agriculture"
+    year: "2024"
+    status: "In Preparation"
+    description: "Comprehensive framework for developing transparent and interpretable AI systems in agricultural applications, with particular focus on livestock monitoring and precision farming technologies."
+---

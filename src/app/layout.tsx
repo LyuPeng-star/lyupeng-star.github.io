@@ -6,45 +6,30 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Peng Lyu | AI Researcher',
-  description: 'PhD in Artificial Intelligence at Jeonju University. Research focus on AI interpretability, intelligent sensing, and neural architecture design.',
-  keywords: [
-    'Peng Lyu',
-    'AI Research',
-    'Artificial Intelligence',
-    'Machine Learning',
-    'Neural Networks',
-    'PhD Student',
-    'Jeonju University'
-  ],
+  title: '朝聞道，夕可眠矣 | Peng Lyu - AI Researcher',
+  description: 'PhD student in AI at Jeonju University. Research focus: AI interpretability, neural architecture design, intelligent sensing.',
+  keywords: ['AI Research', 'Machine Learning', 'Neural Networks', 'PhD Student', 'Jeonju University'],
   authors: [{ name: 'Peng Lyu' }],
-  creator: 'Peng Lyu',
-  publisher: 'Peng Lyu',
-  robots: 'index, follow',
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    title: 'Peng Lyu - AI Researcher',
+    description: 'PhD student researching AI interpretability and neural architecture design',
     url: 'https://lyupaif.com',
-    title: 'Peng Lyu | AI Researcher',
-    description: 'PhD in Artificial Intelligence at Jeonju University. Research focus on AI interpretability, intelligent sensing, and neural architecture design.',
-    siteName: 'Peng Lyu',
+    siteName: 'Peng Lyu Academic Website',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Peng Lyu - AI Researcher',
+        url: '/images/avatar.jpg',
+        width: 600,
+        height: 600,
+        alt: 'Peng Lyu',
       },
     ],
+    locale: 'en_US',
+    type: 'website',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Peng Lyu | AI Researcher',
-    description: 'PhD in Artificial Intelligence at Jeonju University. Research focus on AI interpretability, intelligent sensing, and neural architecture design.',
-    images: ['/og-image.jpg'],
-  },
-  verification: {
-    google: 'your-google-verification-code',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
   },
 }
 

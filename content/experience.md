@@ -1,0 +1,117 @@
+---
+title: "Experience & Education"
+subtitle: "My academic and professional journey"
+
+education:
+  - title: "PhD in Artificial Intelligence"
+    organization: "Jeonju University"
+    location: "South Korea"
+    startDate: "2023"
+    endDate: "Present"
+    description: "Focus on explainable artificial intelligence (XAI), agricultural intelligence, and structural health monitoring. Supervisor: Prof. Sun-Woo Ko. Research involves developing transparent AI systems and intelligent monitoring applications across multiple domains."
+    type: "education"
+    achievements:
+      - "GPA: 4.50/4.50 (Top 3% of programme)"
+      - "Excellence Scholarship for Outstanding Academic Performance (2023-2024)"
+      - "Published 3+ papers in SCI journals"
+      - "Outstanding course performance: AI Algorithms (98), NLP (98), Computer Vision (97)"
+    
+  - title: "Master of Science in Artificial Intelligence"
+    organization: "Jeonju University"
+    location: "South Korea"
+    startDate: "2021"
+    endDate: "2023"
+    description: "Specialised in machine learning algorithms, deep learning, and data mining. Thesis focused on agricultural intelligence and livestock monitoring systems. Completed with distinction and multiple competitive achievements."
+    type: "education"
+    achievements:
+      - "GPA: 4.50/4.50 (Top 3% of programme)"
+      - "Excellence/Language Scholarship recipient (2021-2023)"
+      - "First Prize in Korean Donguibogam Herbal Identification Competition"
+      - "First Prize in Jeollabuk-do University Student Data Analysis Competition"
+    
+  - title: "Bachelor of Engineering in Software Engineering"
+    organization: "Shanxi Agricultural University"
+    location: "China"
+    startDate: "2013"
+    endDate: "2017"
+    description: "Comprehensive foundation in computer science fundamentals, software development, and project management. Active in student leadership roles and extracurricular activities including student union coordination and cultural events."
+    type: "education"
+    achievements:
+      - "Major GPA: 3.6/4.0"
+      - "Active Social Participant Award (2014-2015)"
+      - "Outstanding Student Union Officer (2014-2016)"
+      - "Led coordination of 3 major university events (1000+ participants)"
+
+work:
+  - title: "Lecturer/Teacher"
+    organization: "Jeonju University, College of Liberal Arts"
+    location: "South Korea"
+    startDate: "2025"
+    endDate: "Present"
+    description: "Teaching Computer Thinking and Python Programming to 87 students across Korean and international cohorts. Responsible for bilingual curriculum design, instruction delivery, and student assessment in both Korean and English."
+    type: "work"
+    achievements:
+      - "Designed bilingual curriculum for diverse student populations"
+      - "Successfully delivered courses in Korean and English"
+      - "Maintained high teaching quality standards across cultural contexts"
+    
+  - title: "Graduate Assistant"
+    organization: "Jeonju University Graduate School"
+    location: "South Korea"
+    startDate: "2023"
+    endDate: "2024"
+    description: "Coordinated international student activities and academic support services. Provided academic translation services for thesis and defence materials, managed administrative tasks, and facilitated cultural exchange programmes."
+    type: "work"
+    achievements:
+      - "Organised cultural exchange activities for 30+ international students"
+      - "Provided critical academic translation services for degree requirements"
+      - "Coordinated administrative operations for graduate school office"
+    
+  - title: "Exchange Lecturer"
+    organization: "Chongqing Foreign Trade and Economic College"
+    location: "China"
+    startDate: "2023"
+    endDate: "2023"
+    description: "Participated in AI education exchange programme addressing curriculum development and infrastructure challenges. Delivered lectures on AI teaching methodologies and conducted presentations for large academic audiences."
+    type: "work"
+    achievements:
+      - "Delivered 3 trial lectures (45 minutes each) on AI education"
+      - "Presented to 500-person auditorium on AI curriculum challenges"
+      - "Contributed to international academic exchange initiatives"
+    
+  - title: "Teaching Assistant"
+    organization: "Jeonju University AI College"
+    location: "South Korea"
+    startDate: "2021"
+    endDate: "Present"
+    description: "Supporting AI courses through classroom translation, undergraduate seminars, and academic assessment. Responsibilities include course material development, examination preparation, and student mentoring."
+    type: "work"
+    achievements:
+      - "Provided bilingual academic support for AI courses"
+      - "Developed examination materials and assessment criteria"
+      - "Mentored undergraduate students in research projects"
+    
+  - title: "Research Assistant"
+    organization: "Multiple AI Research Projects"
+    location: "South Korea"
+    startDate: "2021"
+    endDate: "Present"
+    description: "Led multiple research initiatives including Harim Group smart farm project, SHM intelligent monitoring system development, and industrial digitalisation studies. Published first-author papers in top-tier journals."
+    type: "work"
+    achievements:
+      - "Led Harim Group agricultural intelligence project"
+      - "Developed SHM prediction algorithms for infrastructure monitoring"
+      - "Published first-author paper in Agriculture journal (IF: 3.6)"
+    
+  - title: "Android Software Developer"
+    organization: "Oracle (China) Software Systems Co., Ltd."
+    location: "Beijing, China"
+    startDate: "2016"
+    endDate: "2017"
+    description: "Developed mobile applications including Android shopping application and iOS application using Object-C. Gained comprehensive experience in mobile software development and project management."
+    type: "work"
+    achievements:
+      - "Independently developed 'Liangjian Military Products APP' for Android"
+      - "Team development of 'That Year Today APP' using Object-C"
+      - "Completed comprehensive software development training programme"
+---
