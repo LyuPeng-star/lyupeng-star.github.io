@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Bio from './Bio';
 import ElegantLogoText from './ElegantLogoText';
+import ThemeToggle from './ThemeToggle';
 import { 
   Github, 
   // Linkedin, 
@@ -189,63 +190,6 @@ const EnhancedParticleSystem = () => {
   );
 };
 
-// 高级主题切换
-const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      setIsDark(saved === 'dark');
-      document.documentElement.classList.toggle('dark', saved === 'dark');
-    }
-  }, []);
-
-  const toggleTheme = async () => {
-    setIsAnimating(true);
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    document.documentElement.classList.toggle('dark', newTheme);
-    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-    
-    setTimeout(() => setIsAnimating(false), 500);
-  };
-
-  return (
-    <motion.button
-      onClick={toggleTheme}
-      className="fixed top-6 right-6 z-50 p-3 bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg border border-white/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 shadow-xl"
-      whileHover={{ scale: 1.1, rotate: isAnimating ? 180 : 0 }}
-      whileTap={{ scale: 0.9 }}
-    >
-      <AnimatePresence mode="wait">
-        {isDark ? (
-          <motion.div
-            key="sun"
-            initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
-            animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Sun className="w-6 h-6 text-yellow-500" />
-          </motion.div>
-        ) : (
-          <motion.div
-            key="moon"
-            initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
-            animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Moon className="w-6 h-6 text-slate-700" />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.button>
-  );
-};
-
 // 智能导航栏
 const SmartNavigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -345,14 +289,16 @@ export default function EnhancedAcademicSite({ bio, research, publications, teac
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/50 to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20 relative overflow-hidden">
       <EnhancedParticleSystem />
-      <ThemeToggle />
+      <div className="fixed top-6 right-6 z-50">
+        <ThemeToggle />
+      </div>
       <SmartNavigation />
 
       {/* Bio Section */}
       <Bio bio={bio} />
 
       {/* Research Section */}
-      <section id="research" className="py-24 px-6 bg-gradient-to-br from-white/50 to-blue-50/50 dark:from-gray-800/50 dark:to-blue-900/20 relative z-10">
+      <section id="research" className="py-24 px-6 bg-gradient-to-br from-white/50 to-blue-50/50 dark:from-gray-800/50 dark:to-blue-900/20 relative z-10 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -408,7 +354,7 @@ export default function EnhancedAcademicSite({ bio, research, publications, teac
       </section>
 
       {/* Publications Section */}
-      <section id="publications" className="py-24 px-6 relative z-10">
+      <section id="publications" className="py-24 px-6 relative z-10 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -504,7 +450,7 @@ export default function EnhancedAcademicSite({ bio, research, publications, teac
       </section>
 
       {/* Teaching Section */}
-      <section id="teaching" className="py-24 px-6 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-900/20 dark:to-pink-900/20 relative z-10">
+      <section id="teaching" className="py-24 px-6 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-900/20 dark:to-pink-900/20 relative z-10 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -590,7 +536,7 @@ export default function EnhancedAcademicSite({ bio, research, publications, teac
       </section>
 
       {/* Seminars Section */}
-      <section id="seminars" className="py-24 px-6 relative z-10">
+      <section id="seminars" className="py-24 px-6 relative z-10 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -654,17 +600,26 @@ export default function EnhancedAcademicSite({ bio, research, publications, teac
                     {seminar.description}
                   </p>
                   
-                  {seminar.registration && (
-                    <motion.a
-                      href={seminar.registration}
-                      className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-green-700 transition-colors"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span>Register Now</span>
-                      <ExternalLink className="w-4 h-4" />
-                    </motion.a>
-                  )}
+                  {seminar.registration && (() => {
+                    let registrationLink = seminar.registration;
+                    if (registrationLink.includes('@') && !registrationLink.startsWith('mailto:')) {
+                      registrationLink = `mailto:${registrationLink}?subject=Registration for seminar: ${encodeURIComponent(seminar.title)}`;
+                    }
+
+                    return (
+                      <motion.a
+                        href={registrationLink}
+                        target={registrationLink.startsWith('http') ? '_blank' : '_self'}
+                        rel={registrationLink.startsWith('http') ? 'noopener noreferrer' : ''}
+                        className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-green-700 transition-colors"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <span>Register Now</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </motion.a>
+                    );
+                  })()}
                 </motion.div>
               ))}
             </div>
@@ -703,7 +658,7 @@ export default function EnhancedAcademicSite({ bio, research, publications, teac
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-24 px-6 bg-gradient-to-br from-gray-50/50 to-slate-50/50 dark:from-gray-800/50 dark:to-slate-800/50 relative z-10">
+      <section id="experience" className="py-24 px-6 bg-gradient-to-br from-gray-50/50 to-slate-50/50 dark:from-gray-800/50 dark:to-slate-800/50 relative z-10 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -908,7 +863,7 @@ export default function EnhancedAcademicSite({ bio, research, publications, teac
             viewport={{ once: true }}
           >
             <p className="text-gray-400 mb-4">
-              © 2024 {bio.name}. Built with Next.js, passion, and lots of coffee ☕
+              © {new Date().getFullYear()} <a href="#bio" className="font-semibold text-white hover:text-blue-400 transition-colors">{bio.name}</a>. Built with Next.js, passion, and lots of coffee ☕
             </p>
             <p className="text-sm text-gray-500">
               Made in South Korea 🇰🇷 • Advancing AI Research Globally 🌍

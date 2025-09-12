@@ -27,7 +27,7 @@ upcoming:
     topic: "Computational Thinking and Programming Fundamentals"
     description: "Intensive workshop for undergraduate students covering computer thinking and Python programming, delivered in both Korean and English for international accessibility."
     type: "Upcoming"
-    registration: "https://jj.ac.kr/workshops"
+    registration: "https://jj.ac.kr/iphak/connection/notice.do"
 past:
   - title: "Korea Institute of Enterprise Architecture Conference"
     date: "2022-11-11"
