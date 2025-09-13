@@ -863,7 +863,8 @@ export default function EnhancedAcademicSite({ bio, research, publications, teac
             viewport={{ once: true }}
           >
             <p className="text-gray-400 mb-4">
-              © {new Date().getFullYear()} <a href="#bio" className="font-semibold text-white hover:text-blue-400 transition-colors">{bio.name}</a>. Built with Next.js, passion, and lots of coffee ☕
+              © {new Date().getFullYear()} <a href="#bio" className="font-semibold text-white hover:text-blue-400 transition-colors">{bio.name}</a>. 
+              Built with Next.js, passion, lots of coffee ☕, and help from <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-blue-400 transition-colors">Gemini</a>, <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-blue-400 transition-colors">Claude</a>, and <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-blue-400 transition-colors">Chat-GPT</a>.
             </p>
             <p className="text-sm text-gray-500">
               Made in South Korea 🇰🇷 • Advancing AI Research Globally 🌍

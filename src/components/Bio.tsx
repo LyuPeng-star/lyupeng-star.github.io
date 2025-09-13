@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { BioData } from '@/types';
-
+import WorldClock from './WorldClock'; // 请确保路径正确
 
 interface Props {
   bio: BioData;
@@ -336,6 +336,17 @@ export default function EnhancedBioSection({ bio }: Props) {
                 <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-3xl flex items-center justify-center shadow-xl">
                   <Rocket className="w-12 h-12 text-white" />
                 </div>
+              </motion.div>
+              
+              {/* ✨ 新增的世界时钟组件 ✨ */}
+              {/* 我们把它放在左上角，与右上角的奖杯图标形成对称 */}
+              <motion.div
+                className="absolute -top-4 -left-4"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.6 }}
+              >
+                <WorldClock />
               </motion.div>
               
               {/* 动态光效 */}
