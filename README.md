@@ -128,4 +128,4 @@ Thank you for taking the time to explore my project. If you have any questions a
 
 * **GitHub**: [@PengLyu-Star](https://github.com/LyuPeng-star)
 * **LinkedIn**: [Peng Lyu](https://www.linkedin.com/in/lyupaif/)
-* **Email**: [lyupaif@example.com](mailto:lyupaif@jj.ac.kr)
+* **Email**: [lyupaif@jj.ac.kr](mailto:lyupaif@jj.ac.kr)
