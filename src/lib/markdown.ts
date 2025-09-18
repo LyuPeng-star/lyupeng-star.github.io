@@ -7,6 +7,7 @@ import {
   BioData, 
   ResearchItem, 
   Publication, 
+  Project,
   Course, 
   Seminar, 
   Experience,
@@ -14,7 +15,8 @@ import {
   SeminarsData,
   ExperienceData,
   ResearchData,
-  PublicationsData
+  PublicationsData,
+  ProjectsData
 } from '@/types';
 
 /**
@@ -110,6 +112,29 @@ export async function getPublications(): Promise<Publication[]> {
   const { data } = await getContentData('publications.md');
   // ✅ 已修复: 使用 Array.isArray 进行安全检查
   return Array.isArray(data.publications) ? data.publications : [];
+}
+
+/**
+ * 获取项目数据
+ * @returns 项目数组
+ */
+export async function getProjects(): Promise<Project[]> {
+  const { data } = await getContentData('projects.md');
+  return Array.isArray(data.projects) ? data.projects : [];
+}
+
+/**
+ * 获取完整项目数据
+ * @returns 项目数据对象
+ */
+export async function getProjectsData(): Promise<ProjectsData> {
+  const { data } = await getContentData('projects.md')as { data: Partial<ProjectsData> };
+  
+  return {
+    title: data.title || 'Projects',
+    subtitle: data.subtitle,
+    projects: data.projects || []
+  };
 }
 
 /**
@@ -239,16 +264,17 @@ export async function getPublicationsData(): Promise<PublicationsData> {
  */
 export async function getAllPageData() {
   try {
-    const [bio, research, publications, teaching, seminars, experience] = await Promise.all([
+    const [bio, research, publications, projects, teaching, seminars, experience] = await Promise.all([
       getBioData(),
       getResearchData(),
       getPublications(),
+      getProjects(),
       getTeaching(),
       getSeminars(),
       getExperience()
     ]);
 
-    return { bio, research, publications, teaching, seminars, experience };
+    return { bio, research, publications, teaching, seminars, experience, projects};
   } catch (error) {
     console.error('Error loading page data:', error);
     
@@ -261,14 +287,13 @@ export async function getAllPageData() {
       publications: [],
       teaching: [],
       seminars: [],
-      experience: { education: [], work: [] }
+      experience: { education: [], work: [] },
+      projects: []
     };
   }
 }
 
-// ... 辅助函数部分保持不变 ...
-// (contentFileExists, getAllContentFiles, etc.)
-// ... 您原来的辅助函数代码 ...
+// ... 辅助函数 ...
 export function contentFileExists(filename: string): boolean {
     const fullPath = path.join(process.cwd(), 'content', filename);
     return fs.existsSync(fullPath);

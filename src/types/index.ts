@@ -210,3 +210,34 @@ export interface ContactInfo {
   link: string;
   color?: string;
 }
+
+// 25.09.19 添加这些接口
+// 项目数据类型
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  longDescription?: string;
+  category: string;
+  status: 'Active' | 'Completed' | 'On Hold';
+  startDate: string;
+  endDate?: string;
+  technologies: string[];
+  image?: string;
+  links?: {
+    github?: string;
+    demo?: string;
+    paper?: string;
+    documentation?: string;
+  };
+  collaborators?: string[];
+  funding?: string;
+  highlights?: string[];
+}
+
+// 项目数据结构
+export interface ProjectsData {
+  title: string;
+  subtitle?: string;
+  projects: Project[];
+}

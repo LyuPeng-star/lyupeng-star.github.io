@@ -1,7 +1,8 @@
 import { 
   getBioData, 
   getResearchData, 
-  getPublications, 
+  getPublications,
+  getProjects,
   getTeaching,
   getSeminars,
   getExperience 
@@ -10,10 +11,11 @@ import ClientPage from '@/components/ClientPage';
 
 export default async function HomePage() {
   try {
-    const [bio, research, publications, teaching, seminars, experience] = await Promise.all([
+    const [bio, research, publications, projects, teaching, seminars, experience] = await Promise.all([
       getBioData(),
       getResearchData(), 
       getPublications(),
+      getProjects(),
       getTeaching(),
       getSeminars(),
       getExperience()
@@ -24,6 +26,7 @@ export default async function HomePage() {
         bio={bio}
         research={research}
         publications={publications}
+        projects={projects}
         teaching={teaching}
         seminars={seminars}
         experience={experience}

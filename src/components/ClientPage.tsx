@@ -1,3 +1,4 @@
+// src/components/ClientPage.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -5,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Bio from './Bio';
 import ElegantLogoText from './ElegantLogoText';
 import ThemeToggle from './ThemeToggle';
+import ProjectsSection from './ProjectsSection';
 import { 
   Github, 
   // Linkedin, 
@@ -29,8 +31,14 @@ import {
   Building,
   Clock,
   Presentation,
+  FolderOpen
 } from 'lucide-react';
+
 // import Image from 'next/image';
+
+import { 
+  Project
+} from '@/types';
 
 // 接口定义
 interface BioData {
@@ -116,6 +124,7 @@ interface Props {
   bio: BioData;
   research: ResearchItem[];
   publications: Publication[];
+  projects: Project[];
   teaching: Course[];
   seminars: Seminar[];
   experience: { education: Experience[], work: Experience[] };
@@ -200,7 +209,7 @@ const SmartNavigation = () => {
       setIsScrolled(window.scrollY > 100);
       
       // 检测当前section
-      const sections = ['bio', 'research', 'publications', 'teaching', 'seminars', 'experience', 'contact'];
+      const sections = ['bio', 'research', 'publications', 'projects', 'teaching', 'seminars', 'experience', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -220,6 +229,7 @@ const SmartNavigation = () => {
     { id: 'bio', label: 'Bio', icon: <Users className="w-4 h-4" /> },
     { id: 'research', label: 'Research', icon: <Brain className="w-4 h-4" /> },
     { id: 'publications', label: 'Publications', icon: <FileText className="w-4 h-4" /> },
+    { id: 'projects', label: 'Projects', icon: <FolderOpen className="w-4 h-4" /> },
     { id: 'teaching', label: 'Teaching', icon: <BookOpen className="w-4 h-4" /> },
     { id: 'seminars', label: 'Seminars', icon: <Presentation className="w-4 h-4" /> },
     { id: 'experience', label: 'Background', icon: <GraduationCap className="w-4 h-4" /> },
@@ -285,7 +295,7 @@ const SmartNavigation = () => {
 //   return iconMap[platform] || Globe;
 // };
 
-export default function EnhancedAcademicSite({ bio, research, publications, teaching, seminars, experience }: Props) {
+export default function EnhancedAcademicSite({ bio, research, publications, projects, teaching, seminars, experience }: Props) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/50 to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20 relative overflow-hidden">
       <EnhancedParticleSystem />
@@ -448,6 +458,8 @@ export default function EnhancedAcademicSite({ bio, research, publications, teac
           </div>
         </div>
       </section>
+
+      <ProjectsSection projects={projects} />
 
       {/* Teaching Section */}
       <section id="teaching" className="py-24 px-6 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-900/20 dark:to-pink-900/20 relative z-10 scroll-mt-24">
